@@ -357,10 +357,6 @@ class AccountLoanLine(models.Model):
                 res.append(invoice.id)
                 for line in invoice.invoice_line_ids:
                     line.tax_ids = line._get_computed_taxes()
-                invoice.with_context(
-                    check_move_validity=False
-                )._recompute_dynamic_lines(recompute_all_taxes=True)
-                invoice._check_balanced()
                 if (
                     record.long_term_loan_account_id
                     and record.long_term_principal_amount != 0
@@ -379,7 +375,7 @@ class AccountLoanLine(models.Model):
                     "account_id": self.loan_id.short_term_loan_account_id.id,
                     "credit": self.long_term_principal_amount,
                     "debit": 0,
-                    "exclude_from_invoice_tab": True,
+                    "display_type": 'tax',
                 },
             ),
             (
@@ -389,7 +385,7 @@ class AccountLoanLine(models.Model):
                     "account_id": self.long_term_loan_account_id.id,
                     "credit": 0,
                     "debit": self.long_term_principal_amount,
-                    "exclude_from_invoice_tab": True,
+                    "display_type": 'tax',
                 },
             ),
         ]

@@ -57,12 +57,12 @@
                             string="Pay amount"
                         />
                     </div>
-                    <h1>
+                    <h2>
                         <field name="name" />
-                    </h1>
+                    </h2>
                     <group>
                         <group>
-                            <field name="company_id" options="{'no_create': True}" />
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company" required="1"/>
                             <field name="loan_type" />
                             <field name="loan_amount" />
                         </group>
