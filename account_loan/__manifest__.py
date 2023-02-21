@@ -18,6 +18,6 @@
         "views/account_loan_view.xml",
         "views/account_move_view.xml",
     ],
-    "installable": False,
+    "installable": True,
     "external_dependencies": {"python": ["numpy", "numpy-financial<=1.0.0"]},
 }
