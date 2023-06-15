@@ -31,31 +31,34 @@
                     <field name="state" widget="statusbar" />
                 </header>
                 <sheet>
-                    <div class="oe_button_box">
+                    <div class="oe_button_box" name="button_box">
                         <button
                             name="view_account_moves"
                             class="oe_stat_button"
                             icon="fa-bars"
                             attrs="{'invisible': [('state', '=', 'draft')]}"
                             type="object"
-                            string="Moves"
-                        />
+                        >
+                            <span>Moves</span>
+                        </button>
                         <button
                             name="view_account_invoices"
                             class="oe_stat_button"
                             icon="fa-pencil-square-o"
                             attrs="{'invisible': ['|', ('state', '=', 'draft'), ('is_leasing', '=', False)]}"
                             type="object"
-                            string="Invoices"
-                        />
+                        >
+                            <span>Invoices</span>
+                        </button>
                         <button
                             name="%(account_loan_pay_amount_action)d"
                             class="oe_stat_button"
                             icon="fa-usd"
                             attrs="{'invisible': [('state', '!=', 'posted')]}"
                             type="action"
-                            string="Pay amount"
-                        />
+                        >
+                            <span>Pay amount</span>
+                        </button>
                     </div>
                     <h2>
                         <field name="name" />
