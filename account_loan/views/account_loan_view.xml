@@ -68,31 +68,18 @@
                             <field name="company_id" options="{'no_create': True}" required="1"/>
                             <field name="loan_type" />
                             <field name="loan_amount" />
+                            <field name="partner_id" />
+                            <field name="start_date" />
                         </group>
                         <group>
                             <field name="rate_type" />
                             <field name="rate" />
                             <field name="rate_period" />
-                        </group>
-                    </group>
-                    <group>
-                        <group>
-                            <field name="partner_id" />
-                            <field name="start_date" />
-                            <field name="periods" />
-                            <field name="method_period" />
-                        </group>
-                        <group>
                             <field name="is_leasing" />
                             <field name="round_on_end" />
                             <field name="payment_on_first_period" />
-                        </group>
-                    </group>
-                    <group attrs="{'invisible':[('state', '=', 'draft')]}">
-                        <group>
-                            <field name="pending_principal_amount" />
-                            <field name="payment_amount" />
-                            <field name="interests_amount" />
+                            <field name="periods" />
+                            <field name="method_period" />
                         </group>
                     </group>
                     <notebook>
@@ -136,6 +123,15 @@
                                         attrs="{'required': [('is_leasing', '=', True)]}"
                                     />
                                     <field name="post_invoice" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Amounts" id="amounts" attrs="{'invisible':[('state', '=', 'draft')]}">
+                            <group attrs="{'invisible':[('state', '=', 'draft')]}">
+                                <group>
+                                    <field name="pending_principal_amount" />
+                                    <field name="payment_amount" />
+                                    <field name="interests_amount" />
                                 </group>
                             </group>
                         </page>
