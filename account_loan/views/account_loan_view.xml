@@ -67,6 +67,7 @@
                         <group>
                             <field name="company_id" options="{'no_create': True}" required="1"/>
                             <field name="loan_type" />
+                            <field name="currency_id"/>
                             <field name="loan_amount" />
                             <field name="partner_id" />
                             <field name="start_date" />

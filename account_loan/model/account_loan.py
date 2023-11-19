@@ -164,6 +164,7 @@ class AccountLoan(models.Model):
         "res.currency",
         compute="_compute_currency",
         readonly=True,
+        help="Currency wil be taken from the Journal, if not set there it will be the defaut currency for the company."
     )
     journal_type = fields.Char(compute="_compute_journal_type")
     journal_id = fields.Many2one(
