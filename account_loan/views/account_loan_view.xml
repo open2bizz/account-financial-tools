@@ -115,8 +115,8 @@
                     <h1>
                         <field name="name" readonly="state != 'draft'" />
                     </h1>
-                    <group>
-                        <group>
+                    <group name="main_1">
+                        <group name="main_1_1">
                             <field name="company_id" invisible="1" />
                             <field
                                 name="company_id"
@@ -127,20 +127,20 @@
                             <field name="loan_type" readonly="state != 'draft'" />
                             <field name="loan_amount" readonly="state != 'draft'" />
                         </group>
-                        <group>
+                        <group name="main_1_2">
                             <field name="rate_type" readonly="state != 'draft'" />
                             <field name="rate" />
                             <field name="rate_period" />
                         </group>
                     </group>
-                    <group>
-                        <group>
+                    <group name="main_2">
+                        <group name="main_2_1">
                             <field name="partner_id" readonly="state != 'draft'" />
                             <field name="start_date" readonly="state != 'draft'" />
                             <field name="periods" readonly="state != 'draft'" />
                             <field name="method_period" readonly="state != 'draft'" />
                         </group>
-                        <group>
+                        <group name="main_2_2">
                             <field name="is_leasing" readonly="state != 'draft'" />
                             <field name="round_on_end" readonly="state != 'draft'" />
                             <field
@@ -149,8 +149,8 @@
                             />
                         </group>
                     </group>
-                    <group invisible="state == 'draft'">
-                        <group>
+                    <group name="main_3" invisible="state == 'draft'">
+                        <group name="main_3_1">
                             <field name="pending_principal_amount" />
                             <field name="payment_amount" />
                             <field name="interests_amount" />
